@@ -1,0 +1,138 @@
+$base-font-size: 16px;
+$base-line-height: 27px;
+
+$global-font-size: $base-font-size;
+$global-line-height: $base-line-height;
+$web-safe-font: Arial, Helvetica, sans-serif;
+$body-font-family: 'FidelitySans', #{ $web-safe-font };
+
+$breakpoint-small: 0;
+$breakpoint-medium: 640px;
+$breakpoint-large: 1024px;
+$breakpoint-wide: 1300px;
+
+$breakpoints: (
+    small: $breakpoint-small,
+    medium: $breakpoint-medium,
+    large: $breakpoint-large,
+    wide: $breakpoint-wide
+);
+$breakpoint-classes: (small medium large wide);
+
+
+$type-sizes-custom-small: (
+        'h1': ( 45, 54, '300' ),
+        'h2': ( 38, 48, '300' ),
+        'h3': ( 30, 40, '300' ),
+        'h4': ( 24, 36, '300' ),
+        'h5': ( 18, 28, 'bold' ),
+        'h6': ( 18, 28, 'normal' ),
+        'p': ( 16, 27, 'normal' ),
+);
+
+$type-sizes-custom-medium: (
+        'h1': ( 70, 74, '300' ),
+        'h2': ( 48, 58, '300' ),
+        'h3': ( 32, 40, '300' ),
+        'h4': ( 24, 36, '300' ),
+        'h5': ( 18, 28, 'bold' ),
+        'h6': ( 18, 28, 'normal' ),
+        'p': ( 16, 27, 'normal' ),
+);
+
+
+$type-sizes-custom-large: (
+        'h1': ( 45, 54, '300' ),
+        'h2': ( 38, 48, '300' ),
+        'h3': ( 30, 40, '300' ),
+        'h4': ( 24, 36, '300' ),
+        'h5': ( 18, 28, 'bold' ),
+        'h6': ( 18, 28, 'normal' ),
+        'p': ( 16, 27, 'normal' ),
+);
+
+
+$type-sizes-custom-wide: (
+        'h1': ( 45, 54, '300' ),
+        'h2': ( 38, 48, '300' ),
+        'h3': ( 30, 40, '300' ),
+        'h4': ( 24, 36, '300' ),
+        'h5': ( 18, 28, 'bold' ),
+        'h6': ( 18, 28, 'normal' ),
+        'p': ( 16, 27, 'normal' ),
+);
+
+
+
+
+@each $tag, $tag-spec in $type-sizes-custom-small {
+
+    $font-size: nth( $tag-spec, 1 );
+    $line-height: nth( $tag-spec, 2 );
+    $font-weight: nth( $tag-spec, 3 );
+
+    #{ $tag }, .#{ $tag } {
+        font-family: $body-font-family;
+        font-size: #{ $font-size }px;
+        line-height: #{ $line-height }px;
+        font-weight: #{ $font-weight };
+    }
+
+}
+
+@media (min-width:$breakpoint-medium) {
+
+    @each $tag, $tag-spec in $type-sizes-custom-medium {
+
+        $font-size: nth( $tag-spec, 1 );
+        $line-height: nth( $tag-spec, 2 );
+        $font-weight: nth( $tag-spec, 3 );
+
+        #{ $tag }, .#{ $tag } {
+            font-family: $body-font-family;
+            font-size: #{ $font-size }px;
+            line-height: #{ $line-height }px;
+            font-weight: #{ $font-weight };
+        }
+
+    }
+
+}
+
+@media (min-width:$breakpoint-large) {
+
+    @each $tag, $tag-spec in $type-sizes-custom-large{
+
+        $font-size: nth( $tag-spec, 1 );
+        $line-height: nth( $tag-spec, 2 );
+        $font-weight: nth( $tag-spec, 3 );
+
+        #{ $tag }, .#{ $tag } {
+            font-family: $body-font-family;
+            font-size: #{ $font-size }px;
+            line-height: #{ $line-height }px;
+            font-weight: #{ $font-weight };
+        }
+
+    }
+
+}
+
+@media (min-width:$breakpoint-wide) {
+
+    @each $tag, $tag-spec in $type-sizes-custom-wide{
+
+        $font-size: nth( $tag-spec, 1 );
+        $line-height: nth( $tag-spec, 2 );
+        $font-weight: nth( $tag-spec, 3 );
+
+        #{ $tag }, .#{ $tag } {
+            font-family: $body-font-family;
+            font-size: #{ $font-size }px;
+            line-height: #{ $line-height }px;
+            font-weight: #{ $font-weight };
+        }
+
+    }
+
+}
